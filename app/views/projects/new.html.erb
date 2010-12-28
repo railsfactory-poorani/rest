@@ -1,0 +1,62 @@
+
+<center><h1>To Create a new Project</h1></center>
+<br><br><br><br>
+<%- form_for :data,  :url=>{:action => "create" } do |f| %>
+<h3>
+<table>
+ <%= f.hidden_field :project_manager_name,  :value=>@q %>
+
+<tr><td>
+<%= f.label:"Client Name*" %></td>
+<td><%= f.text_field:client %></td></tr>
+<tr><td>
+<%= f.label:"Project Name*" %></td>
+<td><%= f.text_field:project_name %></td></tr>
+<tr><td>
+<%= f.label:"Resources" %></td>
+<td><select id="res" name="resourcetemp" >
+<% for i in 0...@a.length do %><option><%= @a[i].name %></option><%- end -%>
+</td>
+
+<td><%= button_to_function "add", :onclick=>"add()" %></td> 
+<td><%= f.text_area:d, :id=> "c", :rows=> "10", :cols=>"5" %></td>
+<td><%= button_to_function "clear", :onclick=> "clear1()" %></td></tr></table></h3>
+<script >
+var a =[],i=0,b =[],j;
+function add()
+{
+res=document.getElementById("res").value;
+for(j=0;j<a.length;j++)
+{
+if(a[j]==res)
+{
+alert("Already added");
+exit();
+}
+}
+a[i]=res;
+i=i+1;
+document.getElementById("c").value=a;
+}
+function clear1()
+{
+i=0;
+a=b;
+document.getElementById("c").value="";
+}
+function create()
+{
+document.getElementById("Resource1").value=a;
+
+}
+</script>
+ <%= f.hidden_field :resource, :id=>"Resource1" %><br><br><br><br>
+<center><%= f.submit:"Create", :onclick=>"create()" %></center>
+<h3>
+<center><%=@msg%><br>
+</center></h3>
+<%- end -%>
+
+
+
+

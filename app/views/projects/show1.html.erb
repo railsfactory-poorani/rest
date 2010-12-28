@@ -1,0 +1,21 @@
+
+<center><h1>Showing the Employees Details</h1></center>
+<h3>
+<table>
+<tr>
+    
+    <th>Emp Name</th>
+    <th>Designation </th>
+    <th>Email</th>
+</tr>
+
+<%- for i in @emp do %>
+<tr>
+	
+	<td><%= i.name %></td>
+	<td><%= i.designation %></td>
+	<td><%= i.email %></td>
+	</tr>
+<%- end -%>
+</table>
+</h3>

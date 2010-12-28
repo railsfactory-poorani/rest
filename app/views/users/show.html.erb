@@ -1,0 +1,27 @@
+<center><h1>Showing the Employees Details</h1></center>
+
+
+<h1><%= $current.name %></h1><br>
+<br><br><br><center><h3><font color="green"><%= @msg1 %></font></h3></center>
+<h3>
+<table>
+<tr>
+     <th>Emp ID</th>
+    <th>Emp Name</th>
+    <th>Designation </th>
+    <th>Email</th>
+</tr>
+<%- for i in @emp do %> 
+<tr>
+	<td><%= i.id %></td>
+	<td><%= i.name %></td>
+	<td><%= i.designation %></td>
+	<td><%= i.email %></td>
+	<td><%= link_to 'Edit', :id=> i.id, :controller=>"users", :action=>"edit" %></td>
+	<td><%= link_to 'Delete', :id=> i.id, :controller=>"users",  :action=>"delete" %></td>
+	
+    </tr>
+<%- end -%>
+</table>
+
+</h3>

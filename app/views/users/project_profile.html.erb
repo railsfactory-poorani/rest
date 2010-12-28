@@ -1,0 +1,21 @@
+<center><h1>Projects List<h1></center><br>
+<h3><table>
+<%- for i in 0...@projects.length do %>
+
+<tr>
+<td>Project name:<td>
+<td><%= @projects[i].project_name %></td>
+</tr>
+<tr>
+<td>Client:<td>
+<td><%= @projects[i].client %></td>
+</tr>
+<tr>
+<td>Project Manager:<td>
+<td><%= @projects[i].project_manager_name %></td></h3>
+</tr><tr></tr><td></td><tr></tr><tr><td></td></tr>
+<%- end -%>   
+</table>
+<h3>
+
+</h3>

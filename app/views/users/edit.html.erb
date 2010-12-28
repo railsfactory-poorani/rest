@@ -1,0 +1,24 @@
+<h1>Update Employee Detail</h1>
+
+
+
+<%= form_for :user, :url => {:action=> 'update'} do |f| -%>
+
+<%= f.hidden_field :id,  :value=>@emp.id%>
+<p><%= label_tag 'login' %><br/>
+<%= f.text_field :login, :value=>@emp.login %></p>
+<p><%= label_tag 'name' %><br/>
+<%= f.text_field :name, :value=>@emp.name %></p>
+
+<p><%= label_tag 'email' %><br/>
+<%= f.text_field :email, :value=>@emp.email %></p>
+<p><%= f.label:"Designation*" %><br/>
+
+<%= f.select (:designation, [ ['Project Manager', 'Project Manager'],
+['Senior Developer', 'Senior Developer'],['Developer', 'Developer'],
+['Designer', 'Designer'],
+['Tester', 'Tester'] ]) %>
+
+
+<p><%= submit_tag 'Update' %></p>
+<%- end -%>

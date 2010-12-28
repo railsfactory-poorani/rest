@@ -1,0 +1,22 @@
+
+<center><h1> Project Details</h1></center>
+<h3>
+<table>
+<tr>
+     <%= @logname %>
+    <th>Project Name</th>
+    <th>Client </th>
+    <th>Project Manager</th>
+
+</tr>
+<%puts " ****************************************"%>
+<%puts @pro.inspect%>
+<%- @pro.each do |i| %> 
+<tr><h3>
+	<td><%= link_to i.project_name, :id=> i.id, :controller=>"projects", :action=>"Resource" %></td>
+	
+	<td><%= i.client %></td>
+	<td><%= i.project_manager_name %></td>
+	</tr></h3>
+<%- end -%>
+</table></h3>

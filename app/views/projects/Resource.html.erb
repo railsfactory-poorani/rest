@@ -1,0 +1,17 @@
+
+<center><h1> Resource</h1></center>
+<h3><table>
+<tr>
+  
+    <th>Project Name</th>
+    <th>Client </th>
+    <th>Resources</th>
+    </tr>
+    <tr>
+<td><%= @pro.project_name %> </td>
+<td><%= @pro.client %></td><td><%= @proemployee[0].name %></td></tr>
+<% for i in 1...@proemployee.length do %>
+<tr><td></td><td></td><td><%= @proemployee[i].name %></td></tr>
+<%- end -%>
+</table></h3><h4>
+<center><%= link_to 'BACK', :controller=>"projects", :action=>"show" %></center></h4>
